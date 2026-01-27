@@ -1,7 +1,7 @@
 [package]
 name = "bevy-toon"
 description = "A tiny Bevy plugin for a toon shader."
-version = "0.1.0"
+version = "0.2.0"
 repository = "https://github.com/maximsnoep/bevy-toon"
 authors = ["Snoep <maxim@snoep.io>"]
 keywords = ["bevy", "toon", "shader", "plugin"]
