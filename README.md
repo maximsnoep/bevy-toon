@@ -1,6 +1,8 @@
 [![Crates.io](https://img.shields.io/crates/v/bevy_toon)](https://crates.io/crates/bevy_toon)
 
-# Bevy Toon
+# bevy-toon
+
+![bevy-toon bunny](assets/bunny.png)
 
 A tiny toon shader for [Bevy](https://bevyengine.org): flat bands of light, lit from the view direction, in the vertex
 colors of the mesh.
