@@ -1,14 +1,14 @@
 import bevy_pbr::render::forward_io::VertexOutput;
-
-@group(constants::MATERIAL_BIND_GROUP) @binding(0)
-var<uniform> view_dir: vec3<f32>; // Passed from Rust
+import bevy_pbr::render::mesh_view_bindings::view;
 
 @fragment
 fn fragment(in: VertexOutput) -> @location(0) vec4<f32> {
     let base_color = in.color;
 
     let normal = normalize(in.world_normal);
-    let n_dot_l = dot(normal, normalize(view_dir));
+    // Lit from the camera: the direction to its eye, per fragment.
+    let view_dir = normalize(view.world_position - in.world_position.xyz);
+    let n_dot_l = dot(normal, view_dir);
 
     // Clamp to non-negative lighting
     let n_dot_l_clamped = max(n_dot_l, 0.0);

@@ -2,20 +2,20 @@
 
 # bevy-toon
 
-![bevy-toon bunny](assets/bunny.png)
+<img src="assets/bunny.png" alt="bevy-toon bunny" width="240">
 
-A tiny toon shader for [Bevy](https://bevyengine.org): flat bands of light, lit from the view direction, in the vertex
-colors of the mesh.
+A tiny toon shader for [Bevy](https://bevyengine.org): flat bands of light, lit from the camera, in the vertex colors of
+the mesh.
 
 ## How to use
 
-Add the `ToonPlugin`, and give your meshes a `ToonMaterial` with the direction you look from:
+Add the `ToonPlugin`, and give your meshes a `ToonMaterial`:
 ```rust
 App::new().add_plugins(ToonPlugin);
 
 commands.spawn((
   Mesh3d(mesh),
-  MeshMaterial3d(materials.add(ToonMaterial { view_dir: Vec3::Z })),
+  MeshMaterial3d(materials.add(ToonMaterial::default())),
 ));
 ```
 
@@ -23,5 +23,5 @@ commands.spawn((
 
 | bevy | bevy_toon |
 |------|-----------|
-| 0.20.0 | 0.3.x |
+| 0.20.0 | 0.3.x, 0.4.x |
 | 0.18.0 | 0.2.x |

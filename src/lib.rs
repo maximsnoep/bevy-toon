@@ -15,11 +15,9 @@ impl Plugin for ToonPlugin {
     }
 }
 
-#[derive(Asset, TypePath, AsBindGroup, Clone)]
-pub struct ToonMaterial {
-    #[uniform(0)]
-    pub view_dir: Vec3,
-}
+/// The toon material: lit from the camera, in the vertex colors of the mesh.
+#[derive(Asset, TypePath, AsBindGroup, Clone, Default)]
+pub struct ToonMaterial {}
 
 impl Material for ToonMaterial {
     fn fragment_shader() -> ShaderRef {
