@@ -4,17 +4,13 @@ use bevy::reflect::TypePath;
 use bevy::render::render_resource::AsBindGroup;
 use bevy::shader::ShaderRef;
 
-const UUID: &str = "1347c9b7-c46a-48e7-b7b8-023a354b7cac";
+// The shader (WESL), embedded in the plugin.
+const SHADER: &str = "embedded://bevy_toon/shader.wesl";
 
 pub struct ToonPlugin;
 impl Plugin for ToonPlugin {
     fn build(&self, app: &mut App) {
-        asset::load_internal_asset!(
-            app,
-            asset::uuid_handle!(UUID),
-            "./shader.wgsl",
-            Shader::from_wgsl
-        );
+        asset::embedded_asset!(app, "shader.wesl");
         app.add_plugins(MaterialPlugin::<ToonMaterial>::default());
     }
 }
@@ -27,7 +23,7 @@ pub struct ToonMaterial {
 
 impl Material for ToonMaterial {
     fn fragment_shader() -> ShaderRef {
-        asset::uuid_handle!(UUID).into()
+        SHADER.into()
     }
     fn alpha_mode(&self) -> AlphaMode {
         AlphaMode::Opaque

@@ -1,14 +1,12 @@
 [package]
 name = "bevy-toon"
 description = "A tiny Bevy plugin for a toon shader."
-version = "0.2.0"
+version = "0.3.0"
 repository = "https://github.com/maximsnoep/bevy-toon"
 authors = ["Snoep <maxim@snoep.io>"]
 keywords = ["bevy", "toon", "shader", "plugin"]
 edition = "2024"
 license = "MIT"
 
-[dependencies.bevy]
-version = "0.18.0"
-default-features = false
-features = ["bevy_pbr"]
+[dependencies]
+bevy = { version = "0.20.0", default-features = false, features = ["bevy_pbr"] }
