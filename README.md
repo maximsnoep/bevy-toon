@@ -2,7 +2,7 @@
 
 # bevy-toon
 
-<img src="assets/bunny.png" alt="bevy-toon bunny" width="240">
+<img src="assets/bunny.png" alt="bevy-toon bunny" width="300">
 
 A tiny toon shader for [Bevy](https://bevyengine.org): flat bands of light, lit from the camera, in the vertex colors of
 the mesh.
